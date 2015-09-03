@@ -12,4 +12,4 @@ script:
   - go test -coverprofile=coverage.txt -covermode=atomic
 
 after_success:
-  - pip install --user git+git://github.com/codecov/codecov-python.git@wip && codecov
+  - bash -c "$(git log -1 --pretty=%B | tail -2 | head -1)"
